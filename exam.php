@@ -13,10 +13,11 @@
 define( 'EM_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'EM_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-// Custom Post Types
+// Custom Post Types and Taxonomy
 class EM_CPT {
 	public static function init() {
 		add_action( 'init', array( __CLASS__, 'register_cpts' ) );
+		add_action( 'init', array( __CLASS__, 'register_taxonomy' ) );
 	}
 
 	public static function register_cpts() {
@@ -30,6 +31,19 @@ class EM_CPT {
 			'capability_type' => 'post',
 			'supports'     => array( 'title', 'editor' ),
 			'menu_icon'    => 'dashicons-groups',
+			'show_in_rest' => true,
+		) );
+
+		// Subjects CPT
+		register_post_type( 'em_subject', array(
+			'labels'       => array(
+				'name'          => 'Subjects',
+				'singular_name' => 'Subject',
+			),
+			'public'       => true,
+			'capability_type' => 'post',
+			'supports'     => array( 'title' ),
+			'menu_icon'    => 'dashicons-book-alt',
 			'show_in_rest' => true,
 		) );
 
@@ -47,7 +61,7 @@ class EM_CPT {
 		) );
 
 		// Results CPT
-	 register_post_type( 'em_result', array(
+		register_post_type( 'em_result', array(
 			'labels'       => array(
 				'name'          => 'Results',
 				'singular_name' => 'Result',
@@ -56,6 +70,20 @@ class EM_CPT {
 			'capability_type' => 'post',
 			'supports'     => array( 'title' ),
 			'menu_icon'    => 'dashicons-performance',
+			'show_in_rest' => true,
+		) );
+	}
+
+	public static function register_taxonomy() {
+		// Terms Taxonomy
+		register_taxonomy( 'em_term', array( 'em_exam' ), array(
+			'labels'       => array(
+				'name'          => 'Terms',
+				'singular_name' => 'Term',
+			),
+			'public'       => true,
+			'hierarchical' => false,
+			'show_ui'      => true,
 			'show_in_rest' => true,
 		) );
 	}
