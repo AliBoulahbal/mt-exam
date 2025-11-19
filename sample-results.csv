@@ -1,0 +1,13 @@
+student_id,exam_id,subject_id,marks,student_name,exam_title,subject_name
+9,22,10,66,"benas","Midterm Math","Mathematics"
+9,22,18,79,"benas","Midterm Math","Physics"
+9,24,10,72,"benas","T1 2025-26","Mathematics"
+9,24,21,96,"benas","T1 2025-26","Biology"
+9,28,10,78,"benas","Midterm Exam — T1","Mathematics"
+9,28,17,82,"benas","Midterm Exam — T1","Chemistry"
+13,22,17,84,"ali","Midterm Math","Chemistry"
+13,22,18,97,"ali","Midterm Math","Physics"
+13,24,10,71,"ali","T1 2025-26","Mathematics"
+13,24,21,70,"ali","T1 2025-26","Biology"
+13,28,10,75,"ali","Midterm Exam — T1","Mathematics"
+13,28,17,74,"ali","Midterm Exam — T1","Chemistry"
