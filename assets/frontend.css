@@ -1,0 +1,147 @@
+/* =============================================================================
+   Exam Management – Simple & Responsive Top Students
+   ============================================================================= */
+
+.em-top-students {
+  margin: 2rem 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #333;
+}
+
+.em-term-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2271b1;
+  margin: 1.5rem 0 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.em-term-title small {
+  font-size: 0.85rem;
+  color: #777;
+  font-weight: normal;
+  margin-left: 0.5rem;
+}
+
+.em-students-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: rank;
+}
+
+.em-student {
+  position: relative;
+  padding: 0.9rem 0.9rem 0.9rem 3.2rem;
+  margin-bottom: 0.8rem;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Rank badge */
+.em-student::before {
+  counter-increment: rank;
+  content: counter(rank);
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #2271b1;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: bold;
+  display: grid;
+  place-content: center;
+}
+
+/* Top 3 medals */
+.em-student:nth-child(1)::before { background: #FFD700; color: #333; }
+.em-student:nth-child(2)::before { background: #C0C0C0; color: #333; }
+.em-student:nth-child(3)::before { background: #CD7F32; color: #fff; }
+
+.em-student strong {
+  font-weight: 600;
+  flex: 1;
+}
+
+.em-marks {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.em-average {
+  background: #0073aa;
+  color: white;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.em-top-students-empty {
+  padding: 1rem;
+  background: #f9f9f9;
+  color: #777;
+  font-style: italic;
+  border-radius: 4px;
+}
+
+/* ✅ Fully Responsive */
+@media (max-width: 576px) {
+  .em-student {
+    padding-left: 2.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .em-student::before {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 0.8rem;
+    left: 0.7rem;
+  }
+  
+  /* Stack items on small screens */
+  .em-student {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .em-student .em-marks,
+  .em-student .em-average {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .em-student .em-average {
+    margin-top: 0.3rem;
+    display: inline-block;
+  }
+}
+
+/* Dark mode (auto) */
+@media (prefers-color-scheme: dark) {
+  .em-top-students {
+    color: #e0e0e0;
+  }
+  .em-student {
+    background: #2d2d2d;
+    border-color: #444;
+  }
+  .em-student strong { color: #fff; }
+  .em-marks { color: #aaa; }
+  .em-term-title { color: #61dafb; border-bottom-color: #444; }
+  .em-top-students-empty {
+    background: #2a2a2a;
+    color: #aaa;
+  }
+}

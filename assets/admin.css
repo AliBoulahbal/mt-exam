@@ -1,0 +1,192 @@
+/* =============================================================================
+   Exam Management — Admin Dashboard Styling
+   Follows WordPress Admin UI Patterns (v6.5+)
+   ========================================================================== */
+
+/* ------------------- Global ------------------- */
+.em-section {
+  background: #fff;
+  border: 1px solid #c3c4c7;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.em-section h3 {
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1.1em;
+  color: #2271b1;
+}
+
+/* ------------------- Terms (Dates) ------------------- */
+#em_start_date,
+#em_end_date {
+  max-width: 180px;
+  padding: 6px 10px;
+  border: 1px solid #8c8f94;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.form-field .description,
+.form-wrap .description {
+  font-style: italic;
+  color: #646970;
+  margin-top: 4px;
+}
+
+/* ------------------- Exams ------------------- */
+#em_start_datetime,
+#em_end_datetime {
+  max-width: 200px;
+  padding: 6px 10px;
+}
+
+#em_subject_ids {
+  min-height: 120px;
+  border: 1px solid #8c8f94;
+  border-radius: 4px;
+}
+
+.em-term-select {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+/* ------------------- Results ------------------- */
+#em_student_id,
+#em_exam_id {
+  width: 100%;
+  max-width: 320px;
+  padding: 6px 10px;
+}
+
+#em_subject_marks_container h4 {
+  margin: 16px 0 8px;
+  color: #1d2327;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+#em_subject_marks_container input[type="number"] {
+  width: 90px !important;
+  padding: 6px 10px;
+  border: 1px solid #8c8f94;
+  border-radius: 4px;
+  text-align: right;
+  font-family: monospace;
+}
+
+#em_subject_marks_container p {
+  margin: 4px 0;
+}
+
+/* Error & success states */
+.em-error,
+.error {
+  color: #d63638;
+  background: #fbeaea;
+  padding: 8px 12px;
+  border-left: 4px solid #d63638;
+  margin: 12px 0;
+  border-radius: 2px;
+}
+
+.em-success,
+.notice-success {
+  border-left-color: #46b450 !important;
+}
+
+/* ------------------- Bulk Import ------------------- */
+.em-import-instructions {
+  background: #f8f9fa;
+  border: 1px solid #c3c4c7;
+  padding: 16px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.em-import-instructions h4 {
+  margin-top: 0;
+}
+
+.em-import-instructions code {
+  background: #e5e5e5;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+/* ------------------- Statistics Report ------------------- */
+.em-report-table th {
+  position: sticky;
+  top: 0;
+  background: #f9f9f9;
+  z-index: 2;
+}
+
+@media screen and (max-width: 782px) {
+  .em-report-table th,
+  .em-report-table td {
+    white-space: nowrap;
+    padding: 8px 6px;
+    font-size: 0.9em;
+  }
+}
+
+/* ------------------- Responsive ------------------- */
+@media screen and (max-width: 600px) {
+  .em-section {
+    padding: 12px;
+  }
+
+  #em_start_datetime,
+  #em_end_datetime,
+  #em_start_date,
+  #em_end_date,
+  #em_student_id,
+  #em_exam_id {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .em-section h3 {
+    font-size: 1em;
+  }
+}
+
+/* ------------------- Dark Mode Support ------------------- */
+@media (prefers-color-scheme: dark) {
+  .em-section,
+  .em-import-instructions {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+  }
+
+  #em_start_date,
+  #em_end_date,
+  #em_start_datetime,
+  #em_end_datetime,
+  #em_subject_ids,
+  #em_student_id,
+  #em_exam_id,
+  #em_subject_marks_container input[type="number"] {
+    background: #1e1e1e;
+    border-color: #555;
+    color: #fff;
+  }
+
+  .em-section h3 {
+    color: #61dafb;
+    border-color: #444;
+  }
+
+  .em-error {
+    background: #392828;
+    border-left-color: #d63638;
+  }
+}
